@@ -1,22 +1,7 @@
 rm(list=ls()) #clear the workspace
 
-#nearest neighbours function comes from spatstat package which is unavailable for the R studio installed 
-#on the server
-library("spatstat") #contains nndist function
-library("ggplot2") #for plotting landscapes (provides an image of what the landscape looks like)
-library("boot") #for bootstrapping 95% CI's
-
-setwd("C:/Users/abuga/Desktop/Manuscript/Functions") #access working directory that all my metapop 
-#functions are stored in
-source("Create Landscape Function.r") #load create.landscape.function (fuction creates a single landscape)
-source("Rep Create Landscape Function.r") #load rep.create.landscape.function (function creates multiple 
-#landscapes creating a dataset for them)
-source("NNDist Distribution Summary Function.r") #load nndist.summary function (function calculates summary
-#stats of the distribution of Nearest Neighbour distances within a set of landscapes) 
-source("Choose Alphas Function.r") #load choose alphas function (function chooses average dispersal 
-#distances based on the distribution of nearest neighbour distances within the set of landscapes)
-
-#GENERATING LANDSCAPE DATA: Define the specifics of the landscapes you wish to generate here
+#LANDSCAPE SPECIFICS ***Define the specifics of the landscapes you wish to generate here***
+#############################################################################################################
 #############################################################################################################
 n.patches=50 #define the number of patches desired in the landscape
 landscape.limit=100 #define the extent of the landscape, provides the x and y lim
@@ -26,6 +11,30 @@ no.replicates=10 #number of landscapes to be generated of each specified type
 directory="C:/Users/abuga/Desktop/Final Metapop R Package/changing to mean min/50 patches" #define where the 
 #output should go
 landscape.types=c("regular", "random", "clustered") #Define the type or types of landscapes to be generated
+############################################################################################################
+############################################################################################################
+
+#LOAD REQUIRED PAKAGES
+############################################################################################################
+#nearest neighbours function comes from spatstat package which is unavailable for the R studio installed 
+#on the server
+library("spatstat") #contains nndist function
+library("ggplot2") #for plotting landscapes (provides an image of what the landscape looks like)
+library("boot") #for bootstrapping 95% CI's
+
+setwd("C:/Users/abuga/Desktop/Manuscript/Functions") #access working directory that all metapop 
+#functions are stored in
+source("Create Landscape Function.r") #load create.landscape.function (fuction creates a single landscape)
+source("Rep Create Landscape Function.r") #load rep.create.landscape.function (function creates multiple 
+#landscapes creating a dataset for them)
+source("NNDist Distribution Summary Function.r") #load nndist.summary function (function calculates summary
+#stats of the distribution of Nearest Neighbour distances within a set of landscapes) 
+source("Choose Alphas Function.r") #load choose alphas function (function chooses average dispersal 
+#distances based on the distribution of nearest neighbour distances within the set of landscapes)
+############################################################################################################
+
+#GENERATE LANDSCAPES
+############################################################################################################
 landscapes.data<-rep.create.landscape(n.patches=n.patches, landscape.limit=landscape.limit, no.runs=no.runs, 
                                       no.replicates=no.replicates, directory=directory) 
 #creates the landscapes
