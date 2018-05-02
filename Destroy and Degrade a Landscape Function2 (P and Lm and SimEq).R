@@ -97,25 +97,39 @@ destroy.vs.degrade<-function(landscape, a, delta){
     e.landscape$A<-initial.landscape$A*(1-percent.habitatloss[j]) 
     #erodes patches by an equivalent % to patch loss
   }
-  output<-data.frame(initial.landscape$patch.ID, 
-                     initial.landscape$A,
-                     initial.landscape$x.coord,
+  output<-data.frame(initial.landscape$patch.ID, #provide info on which patch is which
+                     initial.landscape$A, #provide the "area" or "carrying capacity" of each patch
+                     #provide the locations of each pacth
+                     initial.landscape$x.coord, 
                      initial.landscape$y.coord,
-                     order.lost,
-                     lambda.M.r,
-                     eq.size.r,
-                     eq.p.r,
-                     avg.p.r,
-                     #time.to.eq.r,
-                     #sim.eq.size.r,
+                     order.lost, #provide which patch is lost and when after each patch loss 
+                     #for the landscape undergoing patch destruction
+                     lambda.M.r, #provide the persistence capacity after each patch loss 
+                     #for the landscape undergoing patch destruction
+                     eq.size.r, #provide the number of patches expected to be occupied at P* 
+                     #after each patch loss for the landscape undergoing patch destruction
+                     eq.p.r, #provide the sum of probabilities patches are occupied at P* 
+                     #after each patch loss for the landscape undergoing patch destruction
+                     avg.p.r, #provide the average pacth occupancy at P* after 
+                     #after each patch loss for the landscape undergoing patch destruction
+                     #time.to.eq.r, #provide how long it takes to reach the simulated patch occupancy after ~1000 timesteps
+                     #after each patch loss for the landscape undergoing patch destruction
+                     #sim.eq.size.r, #provide the average patch occupancy after ~1000 timesteps
+                     #after each patch loss for the landscape undergoing patch destruction
                      percent.habitatloss,
-                     lambda.M.e,
-                     eq.size.e,
-                     eq.p.e,
-                     avg.p.e,
-                     #time.to.eq.e, 
-                     #sim.eq.size.e,
-                     delta
+                     lambda.M.e, #provide the persistence capacity after each incremental loss of habitat
+                     #for the landscape undergoing patch degradation
+                     eq.size.e, #provide the number of patches expected to be occupied at P*
+                     #after each incremental loss of habitat for the landscape undergoing patch degradation
+                     eq.p.e, #provide the sum of probabilities patches are occupied at P*
+                     #after each incremental loss of habitat for the landscape undergoing patch degradation
+                     avg.p.e, #provide the average patch occupancy expected to be occupied at P*
+                     #after each incremental loss of habitat for the landscape undergoing patch degradation
+                     #time.to.eq.e, #provide how long it takes to reach the simulated patch occupancy after ~1000 timesteps
+                     #after each patch loss for the landscape undergoing patch destruction
+                     #sim.eq.size.e, #provide the average patch occupancy after ~1000 timesteps
+                     #after each patch loss for the landscape undergoing patch destruction
+                     delta #provide the value of delta that was necessary for the initial pristine persistence capacity
   )
   return(output)}
 ###########################################################################################################
