@@ -11,16 +11,16 @@
 #directory = where output data should be saved
 ###############################################################################################################
 create.multiple.landscapes<-function(n.patches, landscape.limit, no.runs, no.replicates, landscape.types, directory){
-  setwd(directory)
-  for (j in 1:length(landscape.types)){
-    for (i in 1:no.replicates){
+  setwd(directory) #set the working directory to the one specified
+  for (j in 1:length(landscape.types)){ #for each type of landscape specified
+    for (i in 1:no.replicates){ #for the number of landscapes desired
       landscape.i.data<-create.landscape(n.patches=n.patches,
                                          landscape.limit=landscape.limit,
                                          no.runs=no.runs,
-                                         landscape.type = landscape.types[j])
+                                         landscape.type = landscape.types[j]) #create landscapes as specified
       landscape.i.data$landscape.no<-i #add a column indicating the individual landscape's number
       #stitching all the individual landscapes into one data frame
-      if (i==1){type.j.data<-landscape.i.data} 
+      if (i==1){type.j.data<-landscape.i.data}
       else {type.j.data<-rbind(type.j.data, landscape.i.data)}
     }
     type.j.data$landscape.type<-landscape.types[j] #add a column indicating the type of landscape's generated
