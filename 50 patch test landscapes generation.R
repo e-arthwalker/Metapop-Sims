@@ -6,7 +6,7 @@ library("spatstat") #contains nndist function
 library("ggplot2") #for plotting landscapes (provides an image of what the landscape looks like)
 library("boot") #for bootstrapping 95% CI's
 
-setwd("C:/Users/abuga/Desktop/Metapop R Package/Functions") #access working directory that all my metapop 
+setwd("C:/Users/abuga/Desktop/Manuscript/Functions") #access working directory that all my metapop 
 #functions are stored in
 source("Create Landscape Function.r") #load create.landscape.function (fuction creates a single landscape)
 source("Rep Create Landscape Function.r") #load rep.create.landscape.function (function creates multiple 
