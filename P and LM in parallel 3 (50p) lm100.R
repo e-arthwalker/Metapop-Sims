@@ -2,14 +2,18 @@ rm(list=ls()) #clear workspace
 
 #LOAD REQUIRED PACKAGES
 ############################################################################################################
-setwd("C:/Users/Administrator/Desktop/Final Metapop R Package/Functions") #access working directory that all my metapop functions are stored in
+setwd("C:/Users/Administrator/Desktop/Final Metapop R Package/Functions") #access working directory that all 
+#my metapop functions are stored in
 source("Create Landscape Function.r") #load create.landscape.function
 source("Lambda M Function.r") #load the calculate lamda.M.function
 source("Pstar Function.r") #load the persistence.function
 source("time to eq.r") #load the SRLM.sim function
-source("Destroy and Degrade a Landscape Function2 (P and LM).r") #destroy.vs.degrade.function only calculating Pstar and Lambda.M 
-source("Degrade and Destroy Multiple Landscapes Function.r") #replicates landscape creation and destroy vs. degrade specified metapop parameters a specified number of times
-source("Vary Alpha Destroy and Degrade Function for parallel.r") #provides replicates for a range of alphas across a landscape type
+source("Destroy and Degrade a Landscape Function2 (P and LM).r") #destroy.vs.degrade.function only calculating 
+#Pstar and Lambda.M 
+source("Degrade and Destroy Multiple Landscapes Function.r") #replicates landscape creation and destroy vs. 
+#degrade specified metapop parameters a specified number of times
+source("Vary Alpha Destroy and Degrade Function for parallel.r") #provides replicates for a range of alphas 
+#across a landscape type
 #############################################################################################################
 
 #SET WHERE YOU WANT THE OUTPUT TO GO ***modify this appropiately***
