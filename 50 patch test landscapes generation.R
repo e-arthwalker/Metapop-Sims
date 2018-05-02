@@ -13,7 +13,7 @@ source("Rep Create Landscape Function.r") #load rep.create.landscape.function (f
 #landscapes creating a dataset for them)
 source("NNDist Distribution Summary Function.r") #load nndist.summary function (function calculates summary
 #stats of the distribution of Nearest Neighbour distances within a set of landscapes) 
-source("Choose Alphas Function meanmins.r") #load choose alphas function (function chooses average dispersal 
+source("Choose Alphas Function.r") #load choose alphas function (function chooses average dispersal 
 #distances based on the distribution of nearest neighbour distances within the set of landscapes)
 
 #GENERATING LANDSCAPE DATA: Define the specifics of the landscapes you wish to generate here
