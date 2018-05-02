@@ -10,7 +10,7 @@
 
 #NOTE: delta can be factored out of this calculation by letting delta = 1
 ##################################################################################################################
-#F2: DETERMINE lambda.M FUNCTION ***With delta (otherwise exactly the same)
+
 ##################################################################################################################
 lambda.M.function<-function(landscape, a, delta){
   n.patches<-length(landscape$patch.ID)
