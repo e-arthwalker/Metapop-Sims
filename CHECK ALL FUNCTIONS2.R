@@ -1,11 +1,11 @@
 rm(list=ls()) #clear workspace
 
-setwd("C:/Users/Administrator/Desktop/Final Metapop R Package/Functions") #access working directory that all my metapop functions are stored in
+setwd("C:/Users/Administrator/Desktop/Manuscript/Functions") #access working directory that all my metapop functions are stored in
 source("Create Landscape Function.r") #load create.landscape.function
 source("Lambda M Function.r") #load the calculate lamda.M.function
 source("Pstar Function.r") #load the persistence.function
-source("time to eq.r") #load the SRLM.sim function
-source("Destroy and Degrade a Landscape Function2.r") #destroy.vs.degrade.function only calculating Pstar and Lambda.M 
+source("SRLM Sim Function 2.r") #load the SRLM.sim function
+source("Destroy and Degrade a Landscape Function2 (P and LM and SimEq).r") #destroy.vs.degrade.function only calculating Pstar and Lambda.M 
 source("Degrade and Destroy Multiple Landscapes Function.r") #replicates landscape creation and destroy vs. degrade specified metapop parameters a specified number of times
 source("Vary Alpha Destroy and Degrade Function for parallel.r") #provides replicates for a range of alphas across a landscape type
 
@@ -31,7 +31,7 @@ p.star<-pstar.function(landscape=landscape, a=0.1, delta=delta, iterations=1000)
 p.star
 
 #CHECK SRLM function
-data<-SRLM.sim(landscape=landscape, a=100, delta=delta, timesteps=1000, p.initial=p.star, p.star=p.star)
+data<-SRLM.sim(landscape=landscape, a=100, delta=delta, timesteps=1000, p.initial=p.star)
 
 #CHECK destroy.vs.degrade.p.n.Lm function
 regular.landscape<-create.landscape(n.patches=50, landscape.limit=100, landscape.type="regular", no.runs=500)
